@@ -102,7 +102,7 @@ $(document).ready(function() {
   var choice;
   var tic = new TicTacToe();
   var symbol;
-  var converter
+  var converter;
 
   $cells.click(function(){
     choice = $cells.index(this);
@@ -116,7 +116,7 @@ $(document).ready(function() {
     else {
       alert( "Cheater!!! ")
     }
-
+    //console.log(tic.winCondition());
     if(tic.winCondition()) {
       alert(symbol + " wins!");
       tic = new TicTacToe();
@@ -126,10 +126,5 @@ $(document).ready(function() {
 
 });
 
-jhgkajl;gja.keypress(function(){
-  snake.move(input)
-})
 
-snake.move( UPKEY)
 
-snake.up() if UPKEY
