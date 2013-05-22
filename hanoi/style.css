@@ -1,0 +1,33 @@
+.board {
+  margin: auto;
+  height: 600px;
+   width:  1000px;
+border: 5px solid #999;
+}
+
+.panel {
+  height: 600px;
+  width: 300px;
+border: 5px solid #999;
+  float: left;
+  background: grey;
+}
+
+.piece {
+  width: 250px;
+ border: 1px solid #999;
+ margin: auto;
+ bottom: 0px;
+}
+
+#p1 {
+  background: red;
+}
+
+#p2 {
+  background: green;
+}
+
+#p3 {
+  background: blue;
+}
