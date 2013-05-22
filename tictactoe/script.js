@@ -124,10 +124,12 @@ $(document).ready(function() {
   });
 
 
-
-
-
-
 });
 
+jhgkajl;gja.keypress(function(){
+  snake.move(input)
+})
 
+snake.move( UPKEY)
+
+snake.up() if UPKEY
