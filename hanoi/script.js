@@ -50,14 +50,17 @@ Hanoi.prototype.move = function(from, to) {
 //
 //jQuery Stuff
 
+var h = new Hanoi(3);
+
 $(document).ready(function() {
   console.log( 'ready!' ); // IT WORKS!!!
+  $(".panel")
 
   var $panels = $(".panel");
 
   var from;
   var to;
-  var h = new Hanoi(3);
+
   h.setup();
   var clickVal;
   var clickCount = 1;
@@ -98,8 +101,13 @@ $(document).ready(function() {
 
 
 
+$(document).ready(function(){
+
+  //do something
+  //do something else
 
 
+})
 
 
 
