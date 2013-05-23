@@ -128,10 +128,18 @@ var render = function(snake){
 
 $(document).ready(function() {
 
-  board = new Board(10);
-  board.makePellet();
-  snake = new Snake(board);
-  snake.startPos();
+
+  var board;
+  var snake;
+  var timerId;
+
+  var start = function(){
+    board = new Board(10);
+    board.makePellet();
+    snake = new Snake(board);
+    snake.startPos();
+    timerId =  window.setInterval(snakeLoop, 500);
+  };
 
   var converter = {
     37: [0,-1],
@@ -140,9 +148,7 @@ $(document).ready(function() {
     40: [1,0]
   };
 
-  var timerId;
-
-  var snakeLoop = function (snake) {
+  var snakeLoop = function () {
 
     if (snake.alive){
       snake.advance();
@@ -156,7 +162,6 @@ $(document).ready(function() {
 
   };
 
-  timerId = window.setInterval(function(){snakeLoop(snake)}, 500);
 
   $('html').keydown(function (event) {
     console.log("You pressed keycode: " + event.keyCode);
@@ -164,16 +169,11 @@ $(document).ready(function() {
     snake.turn(converter[event.keyCode] || snake.direction);
 
     if(!snake.alive){
-      console.log("IM DEAD!")
-      board = new Board(10);
-      board.makePellet();
-      snake = new Snake(board);
-      snake.direction = DELTAS[1];
-      snake.startPos();
-      timerId = window.setInterval(function(){snakeLoop(snake)}, 500);
+      start();
     }
   });
 
+  start();
 
 });
 
