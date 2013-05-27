@@ -1,4 +1,5 @@
 function Board(size) {
+  // REV All looks good to me. 
   this.size = size;
 
   this.grid = [];
@@ -93,6 +94,7 @@ Snake.prototype.advance = function() {
 
 };
 
+// REV Nice trick on inverse to check for 180 degree turns. 
 Snake.prototype.turn = function(delta){
   var inverse = this.direction;
   inverse = [inverse[0] * (-1), inverse[1] * (-1)];
@@ -115,6 +117,8 @@ var render = function(snake){
   $cells.removeClass("food");
 
   index = snake.board.pellet[0]*10 + snake.board.pellet[1];
+  // I love this. Had to look up the documentation for what cells.eq did. 
+  // This is a great, simple solution.  
   $cells.eq(index).addClass("food");
 
   for(var i = 0; i < snake.corpus.length; i++) {
