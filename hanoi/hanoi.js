@@ -1,3 +1,5 @@
+// REV I wrote all this with Connor, so I'm just going to comment
+// on the UI/HTML/JQ stuff. 
 var range = function(start , end) {
   var inter = [];
 
